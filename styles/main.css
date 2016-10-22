@@ -1,0 +1,27 @@
+body {
+    background: #8BD8FF;
+    color: #000;
+    font-family: "Roboto Slab", Arial, sans-serif;
+    font-size: 100%;
+    margin: 35px;
+}
+
+p2 {
+  float: left;
+  width: 800px;
+  padding: 10px;
+  margin: 35px;
+  background: #fff;
+}
+
+@media (max-width: 700px) {
+  body {width: 100%;
+    margin-top: 0;
+    margin-left: 0;}
+  p2 {width: 80%;
+    margin-top: 20;
+    margin-left: 20;
+    margin-right: 20;}
+  #container {margin: 0;}
+  #sometimes {margin-top: 0;}
+}

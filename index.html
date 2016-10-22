@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>Highcharts</title>
+          <link href="styles/main.css" rel="stylesheet">
+          <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+          <script src="https://code.highcharts.com/highcharts.js"></script>
+          <script src="https://code.highcharts.com/modules/exporting.js"></script>
+</head>
+<body>
+
+<h1>Violent Crimes vs. Arrests in the Five Most Populated States</h1>
+<p1>By: Lindsey Spatola</p1>
+
+
+<div id="something" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+<script>
+$(function () {
+    $('#something').highcharts({
+        chart: {
+            type: 'area'
+        },
+        title: {
+            text: 'Violent Crimes in the Most Populated States'
+        },
+        subtitle: {
+            text: 'Source: <a href="https://ucr.fbi.gov/crime-in-the-u.s/2015/crime-in-the-u.s.-2015/tables/table-5">FBI Crime Data</a>'
+        },
+        xAxis: {
+            categories: ['California', 'Texas', 'Florida', 'New York', 'Illinois'],
+            tickmarkPlacement: 'on',
+            title: {
+                enabled: false
+            }
+        },
+        yAxis: {
+            title: {
+                text: 'Estimated total of violent crimes'
+            },
+            labels: {
+                formatter: function () {
+                    return this.value / 1000;
+                }
+            }
+        },
+        tooltip: {
+            split: true,
+            valueSuffix: ' '
+        },
+        plotOptions: {
+            area: {
+                stacking: 'normal',
+                lineColor: '#666666',
+                lineWidth: 1,
+                marker: {
+                    lineWidth: 1,
+                    lineColor: '#666666'
+                }
+            }
+        },
+        series: [{
+            name: 'Metropolitan Statistical Area',
+      data: [163219, 104564, 89966, 72606, 45743]
+    }, {
+      name: 'Cities outside metropolitan areas',
+      data: [1630, 5687, 1067, 1271, 2601]
+    }, {
+      name: 'Nonmetropolitan counties',
+      data: [2034, 2976, 2593, 1288, 1010]
+        }]
+    });
+});
+</script>
+
+<p2>
+Calirfonia, Texas, Florida, New York and Illinois are the largest states in the United States by population. California has the most arrests in 2015, so it would be safe to assuse it had the most violent crimes in each area. Thats is not the case. Texas has more violent crimes in cities outside metropolitan and nonmetropolitan counties than California. Violent crimes include the offenses of murder, rape (revised definition), robbery, and aggravated assault.
+</p2>
+
+<div id="container" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+<script>
+$(function() {
+  $('#container').highcharts({
+    chart: {
+      type: 'bar'
+    },
+    title: {
+      text: 'Arrests in the Most Populated States'
+    },
+    subtitle: {
+      text: 'Source: <a href="https://ucr.fbi.gov/crime-in-the-u.s/2015/crime-in-the-u.s.-2015/tables/table-69">FBI Crime Data</a>'
+    },
+    xAxis: {
+      categories: ['California', 'Texas', 'Florida', 'New York', 'Illinois'],
+      title: {
+        text: null
+      }
+    },
+    yAxis: {
+      min: 0,
+      title: {
+        text: 'Arrests',
+        align: 'high'
+      },
+      labels: {
+        overflow: 'justify'
+      }
+    },
+    tooltip: {
+      valueSuffix: ' '
+    },
+    plotOptions: {
+      bar: {
+        dataLabels: {
+          enabled: true
+        }
+      }
+    },
+    legend: {
+      layout: 'vertical',
+      align: 'right',
+      verticalAlign: 'middle',
+      x: -40,
+      y: 80,
+      floating: true,
+      borderWidth: 1,
+      backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+      shadow: true
+    },
+    credits: {
+      enabled: false
+    },
+    series: [{
+      name: 'Total Arrests',
+      data: [1158479, 808119, 772956, 271540, 91218]
+    }]
+  });
+});
+
+</script>
+
+
+</body>
+</html>
