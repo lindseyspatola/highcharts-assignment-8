@@ -16,12 +16,12 @@ p2 {
 
 @media (max-width: 700px) {
   body {width: 100%;
-    margin-top: 0;
-    margin-left: 0;}
+    margin-top: 0px;
+    margin-left: 0px;}
   p2 {width: 80%;
     margin-top: 20;
     margin-left: 20;
     margin-right: 20;}
   #container {margin: 0;}
-  #sometimes {margin-top: 0;}
+  #sometimes {margin-top: 0px;}
 }
